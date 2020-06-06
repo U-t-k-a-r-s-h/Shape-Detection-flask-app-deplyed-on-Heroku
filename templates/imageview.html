@@ -13,7 +13,7 @@
     </div>
     <form class="navbar-form navbar-left" role="search" name="goto" action="/goto" method="POST">
       <div class="form-group">
-        <input type="text" name="index" class="form-control" placeholder="Go to index">
+        <input type="text" name="index" class="form-control" placeholder="Go to index(0-6)">
       </div>
       <button type="Go" class="btn btn-default">Go</button>
     </form>
@@ -32,10 +32,9 @@
     <p>Architecture of the model</p>
   </form>
     <ul class="nav navbar-nav">
-      <font size="6px"><li><a href="/"><button type="Home" class="btn btn-default">Home</button></a></li>
-      <li><a href="/{{pager.prev}}"><button type="prev" class="btn btn-default">prev</button></a> </li>
-      <li><a href="/{{pager.next}}"><button type="next" class="btn btn-default">next</button></a> </li>
-    </font>
+      <li><font size="6px">&ensp;<a href="/">home</a></li><br></font>
+      <li><font size="7px"><a href="/{{pager.prev}}">&larr;</a>&emsp14;</li></font>
+      <li><font size="7px"><a href="/{{pager.next}}">&rarr;</a> </li></font>
     </ul>
   </nav>
 
