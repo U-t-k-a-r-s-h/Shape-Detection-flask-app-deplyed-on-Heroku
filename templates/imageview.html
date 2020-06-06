@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ data.name}} {% endblock %}
+
+{% block content %}
+
+<div class="container" style="width:100%;">
+
+  <nav class="navbar">
+    <div class="navbar-header">
+      
+    <span class="navbar-brand">{{ config.APPNAME }}</span>
+    </div>
+    <form class="navbar-form navbar-left" role="search" name="goto" action="/goto" method="POST">
+      <div class="form-group">
+        <input type="text" name="index" class="form-control" placeholder="Go to index">
+      </div>
+      <button type="Go" class="btn btn-default">Go</button>
+    </form>
+    <div id="parent-div" style="width: 100px; height: 100px;"></div>
+      <form class="navbar-form navbar-left" role="search" name="detect" action="/detect" method="POST">
+        <button style="width: 100%; height: 10%;" type="detect" class="btn btn-default">detect</button>
+        <p>detect using CNN</p>
+      </form>
+    </div>
+    <form class="navbar-form navbar-left" role="search" name="detect_cv" action="/detect_cv" method="POST">
+      <button type="detect_cv" class="btn btn-default">detect_cv</button>
+      <p>detect using machine learining </p>
+    </form>
+  <form class="navbar-form navbar-bottom" role="search" name="Architecture" action="/Architecture" method="POST">
+    <button type="Architecture" class="btn btn-default">Architecture</button>
+    <p>Architecture of the model</p>
+  </form>
+    <ul class="nav navbar-nav">
+      <font size="6px"><li><a href="/"><button type="Home" class="btn btn-default">Home</button></a></li>
+      <li><a href="/{{pager.prev}}"><button type="prev" class="btn btn-default">prev</button></a> </li>
+      <li><a href="/{{pager.next}}"><button type="next" class="btn btn-default">next</button></a> </li>
+    </font>
+    </ul>
+  </nav>
+
+  <div class="row" align="center">
+    <div class="col-md-6">
+      <img src="{{ url_for('static', filename='images/'+data.name+'.jpg') }}" class="img-responsive center-block" alt="">
+    </div>
+    <div class="col-md-6" align="center" >
+      {% include 'table.html' %}
+    </div>
+  </div>
+
+</div>
+{% endblock %}

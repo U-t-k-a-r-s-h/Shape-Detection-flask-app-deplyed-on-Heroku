@@ -1,0 +1,21 @@
+<html>
+<head>
+<style>
+img {
+  width: 30%;
+}
+</style>
+</head>
+<body>
+    <font size="3" Color = "Black">
+    <p><br><b>Architecture:</b>This model is trained using the Convolutional Neural Network architecture. Since, the aim of the model is to
+        classify between 4 different classes, that's why<br> we have used 4 output units at the end of the 
+        model.<br><b>Activation Function:</b>The Activation function for the hidden units is "relu" and the activation function at the output layer
+        is softmax because we are dealing with probabilities.<br><b>Loss Function:</b>The loss used for this model is sparse categorical 
+        crossentropy loss function as the standard loss function. 
+    </p></font>
+    <centre><img src="{{ url_for('static', filename='images/'+'architecture.PNG') }}" alt="" ></centre>
+    <p><b>Training Accuracy</b> = 96.2% <b>Training loss</b> = 0.000024<br>
+        <a href="https://www.kaggle.com/smeschke/four-shapes">Link for the dataset</a></p>
+</body>
+</html>
